@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Layout, Menu, Carousel, Button } from 'antd';
 import {
     DesktopOutlined,
@@ -28,45 +28,38 @@ const Home: React.FC = () => {
         setCollapseState(collapsed)
     }
 
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://platform.twitter.com/widgets.js";
+        document.getElementsByClassName("twitter-embed")[0].appendChild(script);
+      }, []);
+
     return (
         <Layout style={{ minHeight: '100vh' }}>
-            <Sider collapsible collapsed={collapseState} onCollapse={handleCollapse}>
-                <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                    <Menu.Item style={{ marginTop: 100 }} key="1" icon={<PieChartOutlined />}>
-                        Home
-              </Menu.Item>
-                    {/* <Menu.Item key="2" icon={<DesktopOutlined />}>
-                        Conference
-              </Menu.Item> */}
-                    <SubMenu key="sub1" icon={<UserOutlined />} title="Register as">
-                        <Menu.Item key="2">Participant</Menu.Item>
-                        <Menu.Item key="3">Pitch an Idea</Menu.Item>
-                        <Menu.Item key="4">Demonstration</Menu.Item>
-                    </SubMenu>
-                    <Menu.Item key="5" icon={<DesktopOutlined />}>
-                        Share your Story
-              </Menu.Item>
-                    <Menu.Item key="6" icon={<DesktopOutlined />}>
-                        Support
-              </Menu.Item>
-                </Menu>
-            </Sider>
             <Layout className="site-layout">
-                <Header className="site-layout-background" style={{ padding: 0 }} >
-                    <h1 className="text-white">End Rape</h1>
+                <Header className="site-layout-background" style={{ padding: 0, display: 'flex', justifyContent: 'space-between' }} >
+                    <h1 className="text-white px-2">End Rape</h1>
+                    <Menu theme="dark" defaultSelectedKeys={['1']} mode="horizontal">
+                        <Menu.Item key="1" icon={<PieChartOutlined />}>
+                            Home
+              </Menu.Item>
+                        <SubMenu key="sub1" icon={<UserOutlined />} title="Register as">
+                            <Menu.Item key="2">Participant</Menu.Item>
+                            <Menu.Item key="3">Pitch an Idea</Menu.Item>
+                            <Menu.Item key="4">Demonstration</Menu.Item>
+                        </SubMenu>
+                        <Menu.Item key="5" icon={<DesktopOutlined />}>
+                            Share your Story
+              </Menu.Item>
+                        <Menu.Item key="6" icon={<DesktopOutlined />}>
+                            Support
+              </Menu.Item>
+                    </Menu>
                 </Header>
                 <Content >
 
-                    <div className="site-layout-background" style={{ minHeight: 360 }}>
-                        <div className="row" style={{
-                            height: '70vh',
-                            backgroundColor: 'blue',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}>
+                    <div className="site-layout-background" id="home">
+                        <div className="row row-one">
                             <h2 className="text-white">#justiceforjennifer</h2>
                             <h2 className="text-white">#justiceforbarakat</h2>
                             <h2 className="text-white">#justicefortina</h2>
@@ -78,25 +71,43 @@ const Home: React.FC = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <Carousel autoplay>
-                            <div>
-                                <img className="carousel-img" src={carousel1} alt="say NO to rape" />
-                            </div>
-                            <div>
-                                <img className="carousel-img" src={carousel2} alt="say NO to rape" />
-                            </div>
-                            <div>
-                                <img className="carousel-img" src={carousel3} alt="say NO to rape" />
-                            </div>
-                            <div>
-                                <img className="carousel-img" src={carousel4} alt="say NO to rape" />
-                            </div>
-                            <div>
-                                <img className="carousel-img" src={carousel5} alt="say NO to rape" />
-                            </div>
+                        <div style={{ width: '60%' }}>
+                            <Carousel autoplay>
+                                <div>
+                                    <img className="carousel-img" src={carousel1} alt="say NO to rape" />
+                                </div>
+                                <div>
+                                    <img className="carousel-img" src={carousel2} alt="say NO to rape" />
+                                </div>
+                                <div>
+                                    <img className="carousel-img" src={carousel3} alt="say NO to rape" />
+                                </div>
+                                <div>
+                                    <img className="carousel-img" src={carousel4} alt="say NO to rape" />
+                                </div>
+                                <div>
+                                    <img className="carousel-img" src={carousel5} alt="say NO to rape" />
+                                </div>
 
-                        </Carousel>,
-              </div>
+                            </Carousel>
+                        </div>
+                        <div style={{ width: '40%', maxHeight: '80vh', overflow:'scroll',}}>
+                        <section className="twitterContainer">
+      <div className="twitter-embed">
+        <a
+          className="twitter-timeline"
+          data-theme="dark"
+          data-tweet-limit="10"
+          data-chrome="noheader nofooter noborders"
+          href="https://twitter.com/endrape"
+        >
+          Tweets by EndRape
+        </a>
+      </div>
+    </section>
+                           
+                        </div>
+                    </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>No2Rape Initiative ©2020 Created by Suu</Footer>
             </Layout>

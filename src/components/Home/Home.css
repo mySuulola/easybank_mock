@@ -4,7 +4,7 @@
 
 .carousel-img  {
     height: 80vh;
-    width: 100vw;
+    width: auto;
   }
   
   .ant-carousel .slick-slide h3 {
@@ -22,3 +22,29 @@
       margin-top: 30px;
       padding-top: 30px;
   }
+
+  .px-2 {
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+
+img {
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    
+}
+
+.row-one {
+    height: 70vh;
+    background-color: blue;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    min-height: 360px;
+}
