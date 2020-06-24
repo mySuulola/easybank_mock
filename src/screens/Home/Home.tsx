@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { Layout, Menu, Carousel, Button } from 'antd';
-import {
-    DesktopOutlined,
-    PieChartOutlined,
-    FileOutlined,
-    UserOutlined,
-} from '@ant-design/icons';
+import React from 'react'
+
 import './Home.css'
 import TopSection from '../../components/TopSection';
 import Navbar from '../../components/Navbar';
 import ArticleSection from '../../components/ArticleSection';
 import Footer from '../../components/Footer';
-
-
 
 const Home: React.FC = () => {
 

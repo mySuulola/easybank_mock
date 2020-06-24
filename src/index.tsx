@@ -4,11 +4,10 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import $ from 'jquery/dist/jquery.min.js';
-import Popper from 'popper.js';
+// import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import * as serviceWorker from './serviceWorker';
-import 'antd/dist/antd.css';
 
 ReactDOM.render(
   // <React.StrictMode>
