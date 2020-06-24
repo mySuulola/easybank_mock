@@ -3,7 +3,6 @@ import React from 'react'
 import logo from "../assets/images/footlogo.svg"
 import Button from '../common/Button';
 import facebook from "../assets/images/icon-facebook.svg"
-import hamburger from "../assets/images/icon-hamburger.svg"
 import instagram from "../assets/images/icon-instagram.svg"
 import pinterest from "../assets/images/icon-pinterest.svg"
 import twitter from "../assets/images/icon-twitter.svg"
