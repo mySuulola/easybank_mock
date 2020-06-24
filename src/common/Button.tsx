@@ -5,6 +5,6 @@ const Button = () => <button className="btn" style={{
     borderRadius: 50,
     minWidth: '140px',
     color: 'white'
-}}>Request Info</button>
+}}>Request Invite</button>
 
 export default Button

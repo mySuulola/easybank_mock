@@ -38,7 +38,7 @@ function ArticleSection() {
         <div style={{
             minWidth: '16rem',
             // height: '100px'
-        }} className="card mb-3 mx-4 p-0 col-12 col-md-2 border-white">
+        }} className="card mb-3 mx-3 p-0 col-12 col-md-2 border-white">
             <img height={200} src={article.image} className="card-img-top" alt="article" />
             <p className="card-text mt-3"><small className="text-muted pl-4">By {article.author}</small></p>
             <div className="card-body pt-0">
